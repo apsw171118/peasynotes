@@ -1,0 +1,72 @@
+:root {
+  --button-pad-side: 3em;
+  --button-pad-vert: 1.5em;
+}
+
+body {
+    font-size: 15pt;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2, h1 {
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header > h2 {
+  
+}
+
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 20vh;
+}
+
+button {
+  padding: var(--button-pad-vert) var(--button-pad-side) var(--button-pad-vert) var(--button-pad-side);
+  border: solid transparent;
+  border-radius: 8px;
+  color: white;
+  background-color: black;
+  transition: transform 0.1s ease-in-out;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.94)
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h3 {
+  color: #646464C2;
+}
