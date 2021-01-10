@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#000" >
+  <title>PeasyNotes - Take Note</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{{url_for('static', filename='css/note.css')}}">
+</head>
+
+<body>
+  <form id="form" action="#" method="post" accept-charset="utf-8">
+    <textarea name="" id="text" rows="10" cols="40"></textarea>
+    <button type="submit">Save</button>
+  </form>
+  
+  <script src="workers.js" type="module" charset="utf-8"></script>
+  <script src="{{url_for('static', filename='js/note.js')}}"></script>
+</body>
+</html>
