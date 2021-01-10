@@ -6,6 +6,8 @@ app = Flask(__name__)
 def _index():
     return render_template("index.html")
 
-@app.route("/<name>")
-def _name(name):
-    return f"Hello {name}"
+@app.route("/note")
+def _take_note():
+    return render_template("note.html")
+
+
