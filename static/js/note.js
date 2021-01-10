@@ -1,5 +1,3 @@
-
-
 console.log('Go take some notes bro!');
 
 const form = document.getElementById('form')
@@ -33,11 +31,13 @@ function toB64Code(event) {
   
   let result = btoa(text)
   
-  let notesList = JSON.parse(localStorage.getItem("notes"))
+
+    let notesList = JSON.parse(localStorage.getItem("notes"))
   
   let newNotesList = [...notesList, result]
   
   localStorage.setItem("notes", JSON.stringify(newNotesList))
+  
   
   alert("Note added")
   

@@ -15,11 +15,111 @@
 </head>
 
 <body>
-  <form id="form" action="#" method="post" accept-charset="utf-8">
+  <form action="#"   id="form" accept-charset="utf-8">
     <textarea name="" id="text" rows="10" cols="40"></textarea>
-    <button type="submit">Save</button>
+    <button id="make"  type="submit">Save</button>
   </form>
+
+<div id="converted">
+</div>
+
+  <style>
+  #converted {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
   
-  <script src="{{url_for('static', filename='js/note.js')}}"></script>
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 1em;
+    margin-top: 1em;
+  }
+  
+  .card img {
+    max-width: 20px;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: grey;
+  }
+  </style>
+
+  <script type="text/javascript">
+  console.log('Go take some notes bro!');
+  
+  const form = document.getElementById('form')
+  
+  const text = document.getElementById('text')
+  const make = document.getElementById("make")
+  // let copy = document.getElementById('copy')
+  
+  /*
+  console.log(copy.parentNode.children[0].innerText)
+  */
+  function copyToClipboard(el) {
+    let toCopyText = el.parentNode.children[0].innerText
+     //console.log(toCopyText)
+     
+        //toCopyText.select()
+        document.execCommand("copy")
+        
+        alert(`Copied text ${toCopyText}`)
+  }
+  
+  function pass() {
+    return undefined
+  }
+  
+function toB64Code(e) {
+	e.preventDefault()
+  
+  //get text 
+  const text = document.getElementById('text').value
+  
+  let result = btoa(text)
+  
+    // get parent node
+    let notesContainer = document.getElementById('converted')
+    
+    // create elements
+    let card = document.createElement('div')
+    let link = document.createElement('a')
+  
+    // let bin = document.createElement('img')
+    
+    link.href = `/${result}`
+    link.innerText = result
+    
+   // bin.src = "trash.png"
+    
+    // add children
+    card.classList.add("card")
+    card.appendChild(link)
+    // card.appendChild(bin)
+    
+    notesContainer.appendChild(card)
+  
+  alert("Note added")
+  
+  return
+}
+  
+  
+make.addEventListener("click", toB64Code)
+//form.addEventListener("submit", e => e.preventDefault())
+  
+  
+  //localStorage.setItem("notes", JSON.stringify(["jejhdh", "oekxh"]))
+  
+  //console.log(localStorage.getItem('notes'))
+  </script>
 </body>
 </html>

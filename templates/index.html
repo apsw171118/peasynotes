@@ -23,11 +23,23 @@
   
   
  <div class="start">
-    <button> Get Started</button>
+   <a href="/note"> <button> Get Started</button> </a>
  </div>
  
  <footer>
    <h3>👩‍💻 Coded by Josias Aurel</h3>
  </footer>
+
+<script src="text/javascript">
+if (!(localStorage.getItem("notes"))) {
+	localStorage.setItem("notes", JSON.stringify([
+		"SGVsbG8gd29ybGQ="
+	]))
+} else {
+	console.log("Initialized")
+}
+
+</script>
+ 
 </body>
 </html>
