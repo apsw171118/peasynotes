@@ -26,3 +26,6 @@ def _decode_note(msg):
 @app.errorhandler(500)
 def _handle_server_or_client_error(e):
     return render_template("error.html")
+
+if __name__ = "__main__":
+    app.run()
